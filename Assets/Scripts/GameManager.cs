@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -23,5 +24,11 @@ public class GameManager : MonoBehaviour
             YouWinText.SetActive(true);
         else
             YouLoseText.SetActive(true);
+    }
+
+    public void ReloadScene()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
