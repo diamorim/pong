@@ -8,7 +8,7 @@ public class Ball : MonoBehaviour
     [Header("Properties")]
     [SerializeField] private Rigidbody2D rig;
     [Header("Attributes")]
-    [SerializeField] private float speed = 5f;
+    [SerializeField] public float speed = 5f;
     [SerializeField] private float speedIncreasement = 0.1f;
     [SerializeField] private float platformHitWindow = 0.1f;
 
@@ -31,7 +31,6 @@ public class Ball : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         IdWall idWall;
-
         //else if(collision.gameObject.layer == lowerHitbox &&  collision.gameObject.layer == upperHitbox)
         //{
         //    Debug.Log("touched the Player middle");
@@ -47,7 +46,7 @@ public class Ball : MonoBehaviour
         if (collision.gameObject.layer == 9)
         {
             idWall = collision.gameObject.GetComponent<IdWall>();
-            GameManager.instance.GameOver(idWall.id);
+            GameManager.instance.TriggerOnPointMade(idWall.id);
             print("game over");
         }
     }
