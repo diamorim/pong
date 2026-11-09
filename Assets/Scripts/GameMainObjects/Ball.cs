@@ -1,10 +1,10 @@
 using System;
 using System.Collections;
 using UnityEngine;
-using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class Ball : MonoBehaviour
 {
+    #region Variables
     [Header("Properties")]
     [SerializeField] private Rigidbody2D rig;
     [Header("Attributes")]
@@ -12,32 +12,23 @@ public class Ball : MonoBehaviour
     [SerializeField] private float speedIncreasement = 0.1f;
     [SerializeField] private float platformHitWindow = 0.1f;
 
-    private int xDirection = -1;
+    public int xDirection = 1;
     private int yDirection = 1;
 
+    #endregion
 
     private void FixedUpdate()
     {
-        //ball moves at speed
+        if (Time.timeScale == 0)
+            return;
         rig.linearVelocity = new Vector2(speed * xDirection, speed * yDirection);
     }
 
-    //if hit hitboxdown
-        //ball goes up
-    //if hit hitboxup
-        //ball goes down
-    //else
-        //ball goes forward
+    #region Collision
     private void OnCollisionEnter2D(Collision2D collision)
     {
         IdWall idWall;
-        //else if(collision.gameObject.layer == lowerHitbox &&  collision.gameObject.layer == upperHitbox)
-        //{
-        //    Debug.Log("touched the Player middle");
-        //    xDirection *= -1;
-        //    yDirection *= 0;
-        //    speed += speedIncreasement;
-        //}
+
         OnHitPlatform(collision);
         if (collision.gameObject.layer == 8)
         {
@@ -94,6 +85,7 @@ public class Ball : MonoBehaviour
         hitUpperPlatform = false;
         checkingHit = false;
     }
+    #endregion
 
     void ChangeDirections(int ballDirectionY, string debugMessage)
     {

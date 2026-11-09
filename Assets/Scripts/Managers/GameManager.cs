@@ -37,18 +37,19 @@ public class GameManager : MonoBehaviour
 
     #endregion
 
-    private void Awake()
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+    private static void PauseGame()
     {
+        Time.timeScale = 0;
+    }
+    void Awake()
+    {
+        Time.timeScale = 0;
         if (instance == null || instance != this)
             instance = this;
         ChangeGameState(GameStates.start);
         if(ball != null )
             ballSpeed = ball.GetComponent<Ball>().speed;
-    }
-
-    private void Start()
-    {
-        Time.timeScale = 0;
     }
 
     #region TriggerEvents
@@ -119,7 +120,6 @@ public class GameManager : MonoBehaviour
     private void GameStart()
     {
         startText.SetActive(true);
-        Time.timeScale = 0;
         startGameScreen.SetActive(true);
         if (Input.GetKeyDown(KeyCode.Space))
             ChangeGameState(GameStates.inGame);
@@ -168,6 +168,7 @@ public class GameManager : MonoBehaviour
 
     void ResetingGame()
     {
+        BasicAI AIScript = players[1].GetComponent<BasicAI>();
         Array.ForEach(pointScreens, screens => screens.SetActive(false));
         Ball ballScript = ball.GetComponent<Ball>();
         for (int i = 0;i < 2; i++)
@@ -176,7 +177,7 @@ public class GameManager : MonoBehaviour
             ball.transform.position = new Vector2(0, 0);
             ballScript.speed = ballSpeed;
         }
-
+        AIScript.passedStartState = false;
     }
 
     #region Score Management
