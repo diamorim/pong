@@ -44,7 +44,7 @@ A simple Pong clone made in Unity, where the player faces an AI-controlled paddl
 1. Open the game.
 2. Open the main scene and press **Play**.
 3. Press **Space** on the start screen to begin the match.
-4. Use `W` and `S` or `up arrow` `down arrow` to move
+4. Use `W` and `S` or `up arrow` and `down arrow` to move
 4. Hit the ball back and score points against the AI.
 5. press `Alt + f4` to quit the game, if playing online just press esc to close the fullscreen mode.
 
