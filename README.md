@@ -2,12 +2,51 @@
 
 A simple Pong clone made in Unity, where the player faces an AI-controlled paddle.
 
+## Download
+
+- [Play in browser](https://dinnerbone2065.itch.io/pong) (download not necessery but please play in full screen mode)
+- [Windows or Mac](https://github.com/diamorim/pong/releases/tag/v1.0.0)
+
+## Instructions
+
+### Windows
+
+1. Extract the file `Pong-Windows.zip`
+2. Open the Folder `Pong-Windows.zip`
+3. Launch the file `Pong.exe` 
+
+### Windows
+1. Download `Pong-Windows.zip`
+2. Extract the ZIP file.
+3. Open the extracted folder.
+4. Double-click `Pong.exe` to start the game.
+
+### macOS
+1. Download `Pong-macOS.zip` from the latest release.
+2. Extract the ZIP file.
+3. Move `Pong.app` to your Applications folder (optional).
+4. Double-click `Pong.app` to launch the game.
+
+**Note for macOS users:** If macOS blocks the application because it comes from an unidentified developer:
+
+1. Open **System Settings → Privacy & Security**.
+2. Scroll down to the Security section.
+3. Click **Open Anyway** next to the blocked application.
+4. Confirm that you want to open it.
+
+### Browser
+
+- Open this [link](https://dinnerbone2065.itch.io/pong)
+- Press in the blue button at the bottom right corner of the game to open Fullscreen
+
 ## How to play
 
-1. Open the project in Unity (see requirements below).
+1. Open the game.
 2. Open the main scene and press **Play**.
 3. Press **Space** on the start screen to begin the match.
+4. Use `W` and `S` or `up arrow` `down arrow` to move
 4. Hit the ball back and score points against the AI.
+5. press `Alt + f4` to quit the game, if playing online just press esc to close the fullscreen mode.
 
 ## Script overview
 
