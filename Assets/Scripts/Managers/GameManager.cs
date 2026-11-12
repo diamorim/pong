@@ -55,19 +55,22 @@ public class GameManager : MonoBehaviour
     #region TriggerEvents
     private void OnEnable()
     {
-        OnPointMade += (ID)=> StartCoroutine(OnMaKePoint(ID));
+        OnPointMade += HandlePoint;
     }
     private void OnDisable()
     {
-        OnPointMade -= (ID)=> StartCoroutine(OnMaKePoint(ID));
+        OnPointMade -= HandlePoint;
     }
+
+    private void HandlePoint(int ID) => StartCoroutine(OnMaKePoint(ID));
+
     public void TriggerGameOver(int ID)
     {
-        OnGameOver.Invoke(ID);
+        OnGameOver?.Invoke(ID);
     }
     public void TriggerOnPointMade(int ID)
     {
-        OnPointMade.Invoke(ID);
+        OnPointMade?.Invoke(ID);
     }
     #endregion
 
