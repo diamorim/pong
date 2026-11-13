@@ -7,13 +7,7 @@ A simple Pong clone made in Unity, where the player faces an AI-controlled paddl
 - [Play in browser](https://dinnerbone2065.itch.io/pong) (download not necessery but please play in full screen mode)
 - [Windows or Mac](https://github.com/diamorim/pong/releases/tag/v1.0.0)
 
-## Instructions
-
-### Windows
-
-1. Extract the file `Pong-Windows.zip`
-2. Open the Folder `Pong-Windows.zip`
-3. Launch the file `Pong.exe` 
+## Instructions 
 
 ### Windows
 1. Download `Pong-Windows.zip`
